@@ -10,4 +10,7 @@
   5.times do 
     user.posts.create(title: Faker::Lorem.sentence(word_count:3), body: Faker::Lorem::paragraph(sentence_count: 3))
   end
+  5.times do 
+    user.chores.create(name: Faker::Name.name, difficulty_level: Faker::Number.between(from: 1, to: 10), time:Faker::Number.between(from: 1, to: 60)  )
+  end
 end
