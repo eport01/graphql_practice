@@ -7,5 +7,11 @@ module Types
     field :name, String
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
+    field :posts, [Types::PostType] 
+    field :posts_count, Integer 
+
+    def posts_count 
+      object.posts.count
+    end
   end
 end
