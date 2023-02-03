@@ -3,7 +3,7 @@ import Users from './Users';
 import User from './User';
 import getData from '../apiCalls';
 import { Routes, Route, NavLink } from 'react-router-dom'
-
+import Header from './Header'
 
 // class App extends React.Component {
   const App = () => {
@@ -33,10 +33,11 @@ import { Routes, Route, NavLink } from 'react-router-dom'
   // render(){
     return (
       <div className="container mx-auto px-4">
-        <h1>HELLO ARE YOU WORKING </h1>
+        {/* <Header /> */}
+        <h1>Chore Chart </h1>
         <Routes>
           <Route path='/' element={ <Users users={users} selectUser={selectUser}/>}/>
-          <Route path='/:name' element={ <User selectUser={selectUser} />} />
+          <Route path='/`${name}`' element={ <User selectUser={selectUser} />} />
         </Routes>
       </div>
     )

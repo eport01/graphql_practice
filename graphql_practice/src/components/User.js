@@ -7,8 +7,8 @@ const User = ({ id, name, email, selectUser}) => {
       <div style={{border: '1px solid black', margin: '5px', paddingLeft: '10px'}}>
         <h2>{name}</h2>
         <h3>{email}</h3>
-        <NavLink to={id}>
-          <button onClick={(id) => selectUser(id)}>Click Me</button>
+        <NavLink to={name}>
+          <button onClick={(name) => selectUser(name)}>Click Me</button>
         </NavLink>
       </div>
   )

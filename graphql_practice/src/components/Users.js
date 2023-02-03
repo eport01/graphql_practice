@@ -1,20 +1,22 @@
 import React from 'react';
 import User from './User';
 import { useQuery, gql } from '@apollo/client';
+import { NavLink } from 'react-router-dom';
+
 // import gql from 'graphql-tag';
 // import UserAvatar from './UserAvatar';
 // import CreateUser from './CreateUser';
 
-const GET_USER = gql `
-{
-  users {
-    id
-    name
-    email
-    postsCount
-  }
-}
-`;
+// const GET_USER = gql `
+// {
+//   users {
+//     id
+//     name
+//     email
+//     postsCount
+//   }
+// }
+// `;
 
 // function Users({ selectUser }) {
 //   const { loading, error, data} = useQuery(GET_USERS)
@@ -34,16 +36,16 @@ const GET_USER = gql `
 //   )
 // }
 
-const Users = (props) => {
-  console.log('USERSSSSS', props)
-  const userData = props.users.map(user => {
+const Users = (selectUser) => {
+  console.log('USERSSSSS', selectUser)
+  const userData = selectUser.users.map(user => {
     console.log('USER', user)
     return (<User 
       key={user.id}
       id={user.id}
       name={user.name}
       email={user.email}
-      selectUser={props.selectUser}
+      selectUser={selectUser.selectUser}
     />)
   })
   return(
